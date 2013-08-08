@@ -1,7 +1,7 @@
 {
   "name": "servicelocator",
   "version": "1.0.0",
-  "description": "Central location to register and locate services.",
+  "description": "Central location to register and locate services within a Node.js application.",
   "keywords": [
     "services",
     "registry"
