@@ -4,7 +4,9 @@
   "description": "Central location to register and locate services within a Node.js application.",
   "keywords": [
     "services",
-    "registry"
+    "registry",
+    "di",
+    "ioc"
   ],
   "repository": {
     "type": "git",
