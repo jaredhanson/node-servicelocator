@@ -15,6 +15,12 @@ describe('Locator', function() {
     it('should return self for chaning', function() {
       expect(rv).to.equal(locator);
     });
+    
+    it('should not overwrite existing services', function() {
+      expect(function() {
+        locator.register('foo', { say: 'baz' })
+      }).to.throw(Error, 'Service already registered with name: foo');
+    });
   });
   
   describe('#unregister', function() {
