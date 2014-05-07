@@ -2,6 +2,28 @@ var Locator = require('../lib/locator');
 
 describe('Locator', function() {
   
+  describe('#isRegistered', function() {
+    var locator = new Locator();
+    locator.register('foo', { say: 'bar' });
+    locator.register('undef');
+    locator.register('null', null);
+    
+    it('should find registered service', function() {
+      var isRegistered = locator.isRegistered('foo');
+      expect(isRegistered).to.be.true;
+    });
+
+    it('should not find service if it is registered as undefined', function() {
+      var isRegistered = locator.isRegistered('undef');
+      expect(isRegistered).to.be.false;
+    });
+
+    it('should not find service if it is registered as null', function() {
+      var isRegistered = locator.isRegistered('null');
+      expect(isRegistered).to.be.false;
+    });
+  });
+
   describe('#register', function() {
     var locator = new Locator();
     var rv = locator.register('foo', { say: 'bar' });
